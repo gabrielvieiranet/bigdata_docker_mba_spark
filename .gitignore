@@ -1,0 +1,6 @@
+data/mysql
+data/metabase
+data/metastore-postgresql
+data/hdfs
+data/notebooks
+data/zookeeper
