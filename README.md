@@ -25,3 +25,52 @@ E execute este comando para criar as tabelas do HUE no database:
 Para acessar a interface do HUE, use o endereço ```http://localhost:8888```
 
 Se receber um erro de que não conseguiu se conectar ao Hive, espere um pouco, pois o hive-server pode demorar um pouco para subir.
+
+### NAMENODE
+
+Para acessar o ambiente do namenode, execute:
+```shell
+docker exec -it namonode bash
+```
+
+## Introdução 
+
+Para o nosso trabalhado, escolhemos um dataset referente a opinão de cervejas (beer_reviews.csv). O objetivo é importarmos este arquivo no HDFS e poder localizá-lo no HUE, em seguida trabalhar no Jupyter utilizando o PySpark 
+
+## Subir o arquivo HDFS
+
+Primeiro, vamos subir criar um diretório no namenode e no HDFS para receber nosso arquivo.
+
+__OBS__: Acessar o namenode
+
+* namenode:
+```shell
+mkdir /mba-data
+```
+* HDFS:
+```shell
+hadoop fs -mkdir /mba-data
+```
+
+
+Em seguida, vamos enviar o arquivo do nosso ambiente local para o namenode, e depois para o HDFS:
+
+__ambiente local --> namenode --> HDFS__
+
+* No ambiente local, vamos carregar o arquivo para o namenode:
+```shell
+docker cp /home/docker/bigdata_docker_mba_spark-main/beer_reviews.csv namenode:/mba-data/beer_reviews.csv
+```
+
+* No namenode, vamos subir o arquivo para o HDFS:
+```shell
+hadoop fs -put /mba-data/beer_reviews.csv /mba-data/beer_reviews.csv
+```
+
+* Vamos acessar o HUE para validar o arquivo:
+
+http://localhost:8888/
+
+* Visualizando a pasta criada: 
+* 
+
