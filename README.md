@@ -35,7 +35,7 @@ docker exec -it namonode bash
 
 ## Introdução 
 
-Para o nosso trabalhado, escolhemos um dataset referente a opinão de cervejas (beer_reviews.csv). O objetivo é importarmos este arquivo no HDFS e poder localizá-lo no HUE, em seguida trabalhar no Jupyter utilizando o PySpark 
+Para o nosso trabalhado, escolhemos um dataset referente a reviews de cervejas (beer_reviews.csv). O objetivo é importarmos este arquivo no HDFS e poder localizá-lo no HUE, em seguida trabalhar no Jupyter utilizando o PySpark 
 
 ## Subir o arquivo HDFS
 
