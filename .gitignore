@@ -4,3 +4,8 @@ data/metastore-postgresql
 data/hdfs
 data/notebooks
 data/zookeeper
+.venv/
+.mypy_cache/
+data/dataset/
+app/data/dataset/
+__pycache__/

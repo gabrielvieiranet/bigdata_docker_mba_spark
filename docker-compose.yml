@@ -111,12 +111,11 @@ services:
     command: mysqld --innodb-flush-method=O_DSYNC --innodb-use-native-aio=OFF
     volumes:
         - ./data/mysql/data:/var/lib/mysql
-        - ./config/init.sql:/data/application/init.sql
+        - ./data/config:/data/application
     environment:
         MYSQL_DATABASE: 'hue'
         MYSQL_USER: 'hue'
         MYSQL_PASSWORD: 'secret'
-        # MYSQL_ROOT_USER: 'root'
         MYSQL_ROOT_PASSWORD: 'secret'
     deploy:
       resources:

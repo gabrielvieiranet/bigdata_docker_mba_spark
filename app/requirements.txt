@@ -1,0 +1,7 @@
+pip
+wheel
+setuptools
+mypy
+flake8
+autopep8
+kaggle

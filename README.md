@@ -78,7 +78,15 @@ http://localhost:8888/
 
 ![hue](/images/HUE.png)
 
+### OPCIONAL
 
+Para baixar o arquivo do dataset via Python, é possível utilizar a API do kaggle. Basta gerar um token no site do Kaggle e guardá-lo em ```~/.kaggle/kaggle.json```
+
+Depois rode o arquivo main.py dentro de /app:
+
+```shell
+python3 main.py
+```
 
 ## PySpark - Jupyter
 
