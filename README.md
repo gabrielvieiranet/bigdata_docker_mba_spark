@@ -62,15 +62,43 @@ __ambiente local --> namenode --> HDFS__
 docker cp /home/docker/bigdata_docker_mba_spark-main/beer_reviews.csv namenode:/mba-data/beer_reviews.csv
 ```
 
+
 * No namenode, vamos subir o arquivo para o HDFS:
 ```shell
 hadoop fs -put /mba-data/beer_reviews.csv /mba-data/beer_reviews.csv
 ```
 
+
 * Vamos acessar o HUE para validar o arquivo:
 
 http://localhost:8888/
 
-* Visualizando a pasta criada: 
-* 
 
+* Em seguida vamos localizar o diretório que criamos e acessá-lo para validar se o arquivo está lá: 
+
+![hue](/images/HUE.png)
+
+
+
+## PySpark - Jupyter
+
+Link do Jupyter: http://localhost:8889/
+
+Vamos acessar o Jupyter e criar um novo projeto PySpark. 
+
+__new --> PySpark (Notebook)__
+
+* Vamos ler nosso arquivo dentro de uma variável para consumir os dados. 
+
+```python
+df = spark.read.csv('/mba-data/beer_reviews.csv', header=True)
+```
+
+* Em seguida, vamos validar se os dados foram lidos com sucesso (No caso vamos limitar em 10 linhas).
+
+```python
+df.show(10)
+```
+
+* Resultado:
+![10 linhas](/images/show-10-lines.png)
